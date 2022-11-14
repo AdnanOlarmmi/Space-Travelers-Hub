@@ -14,7 +14,6 @@ const Missions = () => (
             </tbody>
         </table>
         <table>
-            <tr>
                 <thead>Description</thead>
                 <tbody>
                     <tr>SpaceX will launch the Telstar 19 VANTAGE satellite for Telesat</tr>
@@ -22,10 +21,8 @@ const Missions = () => (
                     <tr>AsiaSat 9 is a geostationary communications satellite that will provide video, data and broadband communications services to Asia and the Pacific region.</tr>
                     <tr>ABS-3A is a geostationary communications satellite that will provide video, data and broadband communications services to Asia and the Pacific region.</tr>
                 </tbody>
-            </tr>
         </table>
         <table>
-            <tr>
                 <thead>Status</thead>
                 <tbody>
                     <tr>Active Member</tr>
@@ -33,7 +30,6 @@ const Missions = () => (
                     <tr>Active Member</tr>
                     <tr>NOT A MEMBER</tr>
                 </tbody>
-            </tr>
         </table>
         </div>
     </main>

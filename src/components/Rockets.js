@@ -14,7 +14,6 @@ const Rockets = () => (
             </tbody>
         </table>
         <table>
-            <tr>
                 <thead>Description</thead>
                 <tbody>
                     <tr>Engine: Merlin 1D</tr>
@@ -22,10 +21,8 @@ const Rockets = () => (
                     <tr>Engine: Merlin 1D+Vacuum</tr>
                     <tr>Engine: Raptor</tr>
                 </tbody>
-            </tr>
         </table>
         <table>
-            <tr>
                 <thead>Status</thead>
                 <tbody>
                     <tr>Active</tr>
@@ -33,7 +30,6 @@ const Rockets = () => (
                     <tr>Active</tr>
                     <tr>Active</tr>
                 </tbody>
-            </tr>
         </table>
         </div>
     </div>

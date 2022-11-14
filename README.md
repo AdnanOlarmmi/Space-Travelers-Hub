@@ -99,7 +99,6 @@ npm start
 ## Credits
 
 - Project from [Microverse](https://bit.ly/MicroverseTN) React module
-- Icon and FlatIcon from freepix [Flaticon](https://www.flaticon.com/)
 
 ## Contributing
 

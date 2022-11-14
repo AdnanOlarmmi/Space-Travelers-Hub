@@ -9,8 +9,7 @@ import Header from './Header';
 const App = () => (
   <Router>
     <Header />
-    <Routes>
-    </Routes>
+    <Routes />
   </Router>
 );
 

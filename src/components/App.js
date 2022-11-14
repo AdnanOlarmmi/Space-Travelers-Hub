@@ -13,9 +13,9 @@ const App = () => (
   <Router>
     <Header />
     <Routes>
-        <Route path="/" element={<Rockets />} />
-        <Route path="/missions" element={<Missions />} />
-        <Route path="/myprofile" element={<MyProfile />} />
+      <Route path="/" element={<Rockets />} />
+      <Route path="/missions" element={<Missions />} />
+      <Route path="/myprofile" element={<MyProfile />} />
     </Routes>
   </Router>
 );

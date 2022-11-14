@@ -17,7 +17,6 @@ a:active {
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
   line-height: 1.5;
   color: #333;
   background-color: #f5f5f5;
@@ -61,11 +60,33 @@ ul {
   color: #1e51dc;
 }
 
-li:first-child {
-  margin-right: 1rem;
+.nav li {
+  cursor: pointer;
 }
 
-li:last-child {
+.nav__profile {
   border-left: 2px solid black;
-  padding-left: 1rem;
+  padding-left: 2rem;
+}
+
+.tables {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tables table {
+  width: 100%;
+  max-width: 400px;
+  border-collapse: collapse;
+  justify-content: space-between;
+}
+
+thead {
+  font-size: large;
+  font-weight: bold;
+}
+
+tr {
+  border: 2px solid #858694;
 }

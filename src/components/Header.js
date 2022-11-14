@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header className="flex-row">
@@ -10,9 +11,15 @@ const Header = () => (
     </div>
     <nav>
       <ul className="nav flex-row">
-        <li>Rocket</li>
+        <Link to='/'>
+        <li className='nav__rockets'>Rockets</li>
+        </Link>
+        <Link to='/missions'>
         <li>Missions</li>
-        <li>My Profile</li>
+        </Link>
+        <Link to='/myprofile'>
+        <li className='nav__profile'>My Profile</li>
+        </Link>  
       </ul>
     </nav>
   </header>

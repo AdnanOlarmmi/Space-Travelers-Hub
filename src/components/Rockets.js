@@ -6,7 +6,7 @@ import Rocket from './Rocket';
 const Rockets = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect(() => { 
     dispatch(fetchRockets());
   }, []);
 

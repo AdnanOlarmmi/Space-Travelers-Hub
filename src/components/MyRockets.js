@@ -6,12 +6,12 @@ const MyRockets = () => {
 
     let rsvdRocket = rockets.filter((rocket) => rocket.reserved === true);
     return (
-  <section className="myrocktes">
-   <h3>My Rockets</h3>
-    <ul>
-        {rsvdRocket.map((rocket)=><li>{rocket.name}</li>)} 
-    </ul>   
-  </section>
+  <table className="myrocktes">
+   <thead>My Rockets</thead>
+    <tbody>
+        {rsvdRocket.map((rocket)=><tr>{rocket.name}</tr>)} 
+    </tbody>   
+  </table>
 )};
 
 export default MyRockets;

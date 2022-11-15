@@ -1,13 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import MyRockets from './MyRockets';
-
 
 const MyProfile = () => {
     return (
-  <main className="myprofile">
+  <table className="myprofile tables">
       <MyRockets/>
-  </main>
+  </table>
 )};
 
 export default MyProfile;

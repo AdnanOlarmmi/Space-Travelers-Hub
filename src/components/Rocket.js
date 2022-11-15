@@ -1,18 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { reserveRocket } from '../redux/rockets/rocketSlice';
 
 const Rocket = (props) => {
+  const { rocketInfo } = props;
   const {
-    description, name, image,
-  } = props;
+    id, name, description, image, reserved,
+  } = rocketInfo;
+  const dispatch = useDispatch();
 
-  const onClick = (e) => {
-    e.target.previousElementSibling.childNodes[0].classList.toggle('hide');
-    e.target.classList.toggle('rocket__cancel');
-    if (e.target.classList.contains('rocket__cancel')) {
-      e.target.innerText = 'Cancel Reservation';
-    } else {
-      e.target.innerText = 'Reserve Rocket';
-    }
+  const onClick = () => {
+    dispatch(reserveRocket(id));
   };
 
   return (
@@ -21,10 +19,10 @@ const Rocket = (props) => {
       <div className="rocket__info flex-column">
         <h4 className="rocket__heading">{name}</h4>
         <p className="rocket__description">
-          <span className="hide">Reserved</span>
+          {reserved && <span>Reserved</span>}
           {description}
         </p>
-        <button type="button" className="rocket__reserve" onClick={onClick}>Reserve Rocket</button>
+        <button type="button" className={`rocket__reserve ${reserved && 'rocket__cancel'}`} onClick={onClick}>{reserved ? 'Cancel Reservation' : 'Reserve'}</button>
       </div>
     </section>
   );

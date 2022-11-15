@@ -134,11 +134,14 @@ tr {
   margin-right: 0.5rem;
 }
 
-.hide {
-  visibility: hidden;
-  position: absolute;
-}
-
 .currentRoute {
   text-decoration: underline;
+}
+
+.myrocktes ul {
+  border-collapse: collapse;
+}
+
+.myrocktes li {  
+  border: 1px solid #858694;
 }

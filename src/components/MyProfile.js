@@ -3,7 +3,7 @@ import MyRockets from './MyRockets';
 
 const MyProfile = () => {
     return (
-  <table className="myprofile tables">
+  <table className="flex-row tables">
       <MyRockets/>
   </table>
 )};

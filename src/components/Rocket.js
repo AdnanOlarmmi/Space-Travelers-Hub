@@ -1,15 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'
-import { reserveRocket } from '../redux/rockets/rocketSlice'
-
+import { useDispatch } from 'react-redux';
+import { reserveRocket } from '../redux/rockets/rocketSlice';
 
 const Rocket = (props) => {
+  const { rocketInfo } = props;
   const {
-    id, name, description, image, reserved
-  } = props.rocketInfo;
+    id, name, description, image, reserved,
+  } = rocketInfo;
   const dispatch = useDispatch();
 
-  const onClick = (e) => {
+  const onClick = () => {
     dispatch(reserveRocket(id));
   };
 
@@ -22,7 +22,7 @@ const Rocket = (props) => {
           {reserved && <span>Reserved</span>}
           {description}
         </p>
-        <button type="button" className=  {`rocket__reserve ${reserved&&'rocket__cancel'}`} onClick={onClick}>{reserved?'Cancel Reservation':'Reserve'}</button>
+        <button type="button" className={`rocket__reserve ${reserved && 'rocket__cancel'}`} onClick={onClick}>{reserved ? 'Cancel Reservation' : 'Reserve'}</button>
       </div>
     </section>
   );

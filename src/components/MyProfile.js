@@ -1,11 +1,10 @@
 import React from 'react';
 import MyRockets from './MyRockets';
 
-const MyProfile = () => {
-    return (
+const MyProfile = () => (
   <table className="flex-row tables">
-      <MyRockets/>
+    <MyRockets />
   </table>
-)};
+);
 
 export default MyProfile;

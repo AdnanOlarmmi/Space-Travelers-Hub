@@ -1,0 +1,20 @@
+.mission_table_wrapper {
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.mission_table_wrapper,
+.mission_table_row,
+.mission_table_head,
+.mission_table_rows {
+  border: 1px solid #e2e5e9;
+  border-collapse: collapse;
+}
+
+.mission_table_head {
+  padding: 0.8rem;
+}
+
+.mission_table_rows:nth-child(odd) {
+  background-color: lightgray;
+}

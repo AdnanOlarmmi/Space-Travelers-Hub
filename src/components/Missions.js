@@ -1,6 +1,6 @@
 import React from 'react';
-import OneMission from '../../components/OneMission/OneMission';
-import styles from './mission.module.css';
+import Mission from './Mission';
+import styles from './components/';
 
 const Mission = () => {
   const missions = [

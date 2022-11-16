@@ -1,43 +1,29 @@
-import React from 'react';
-import Mission from './Mission';
-import styles from './components/';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMissions } from '../redux/missions/missionSlice';
+import Missions from './Mission';
 
-const Mission = () => {
-  const missions = [
-    {
-      id: 1,
-      name: 'Thaicom',
-      description: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    },
-    {
-      id: 2,
-      name: 'Telstar',
-      description: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    },
-    {
-      id: 3,
-      name: 'Iridium NEXT',
-      description: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    },
-  ];
+const Missions = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => { 
+    dispatch(fetchMissions());
+  }, []);
+
+  const missions = useSelector((state) => state.missionReducer.missions);
 
   return (
-    <table className={styles.mission_table_wrapper}>
-      <thead>
-        <tr className={styles.mission_table_row}>
-          <th className={styles.mission_table_head}>Mission</th>
-          <th className={styles.mission_table_head}>Description</th>
-          <th className={styles.mission_table_head}>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {missions.map((item) => (
-          <tr className={styles.mission_table_rows} key={item.id}>
-            <OneMission name={item.name} description={item.description} />
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <main className="rocket__container flex-column">
+      {missions.map((mission) => (
+        <Missions
+          key={mission.id}
+          description={mission.description}
+          name={mission.name}
+          status={mission.status}
+        />
+      ))}
+    </main>
   );
 };
-export default Mission;
+
+export default Missions;

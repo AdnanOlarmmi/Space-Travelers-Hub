@@ -1,38 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMissions } from '../redux/missions/missionSlice';
 
-const Missions = () => (
-  <main className="missions">
-    <h1>Missions</h1>
-    <div className="tables flex-row">
-      <table>
-        <thead>Mission</thead>
-        <tbody>
-          <tr>Telstar</tr>
-          <tr>SES</tr>
-          <tr>AsisSat</tr>
-          <tr>ABS</tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>Description</thead>
-        <tbody>
-          <tr>SpaceX will launch the Telstar </tr>
-          <tr>SES-16 is a geostationary communications </tr>
-          <tr>AsiaSat 9 is a geostationary communications satellite </tr>
-          <tr>ABS-3A is a geostationary communications satellite</tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>Status</thead>
-        <tbody>
-          <tr>Active Member</tr>
-          <tr>NOT A MEMBER</tr>
-          <tr>Active Member</tr>
-          <tr>NOT A MEMBER</tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
-);
+const Missions = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => { 
+    dispatch(fetchMissions());
+  }, []);
+
+  const missions = useSelector((state) => state.missionReducer.missions);
+
+  return (
+    <main className="rocket__container flex-column">
+      {missions.map((mission) => (
+        <Missions
+          key={mission.id}
+          description={mission.description}
+          name={mission.name}
+          status={mission.status}
+        />
+      ))}
+    </main>
+  );
+};
 
 export default Missions;

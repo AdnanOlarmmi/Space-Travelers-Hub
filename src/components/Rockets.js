@@ -6,6 +6,7 @@ import Rocket from './Rocket';
 const Rockets = () => {
   const dispatch = useDispatch();
 
+
   window.onload = () => {
     dispatch(fetchRockets());
   };

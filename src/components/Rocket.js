@@ -6,7 +6,7 @@ const Rocket = (props) => {
   const { rocketInfo } = props;
   const {
     id, name, description, image, reserved,
-  } = rocketInfo;
+} = rocketInfo;
   const dispatch = useDispatch();
 
   const onClick = () => {

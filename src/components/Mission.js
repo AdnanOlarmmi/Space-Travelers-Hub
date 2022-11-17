@@ -1,33 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styles from '../App.module.css';
 
 const Mission = (props) => {
-  const {
-    description, name, image,
-  } = props;
-
-  const onClick = (e) => {
-    e.target.previousElementSibling.childNodes[0].classList.toggle('hide');
-    e.target.classList.toggle('rocket__cancel');
-    if (e.target.classList.contains('rocket__cancel')) {
-      e.target.innerText = 'Cancel Reservation';
-    } else {
-      e.target.innerText = 'Reserve Rocket';
-    }
-  };
+  const { name, description } = props;
 
   return (
-    <section className="rocket flex-row">
-      <img src={image} alt={name} className="rocket__img" />
-      <div className="rocket__info flex-column">
-        <h4 className="rocket__heading">{name}</h4>
-        <p className="rocket__description">
-          <span className="hide">Reserved</span>
-          {description}
-        </p>
-        <button type="button" className="rocket__reserve" onClick={onClick}>Reserve Rocket</button>
-      </div>
-    </section>
+    <>
+      <td className={styles.nameData}>{ name }</td>
+      <td className={styles.onemission_description}>{ description }</td>
+      <td className={styles.notmember}><span>Not A Member</span></td>
+      <td className={styles.joinmission}><button type="button">Join Mission</button></td>
+    </>
   );
 };
 
-export default Rocket;
+Mission.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
+
+export default Mission;

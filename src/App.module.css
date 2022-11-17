@@ -29,3 +29,63 @@
 .mission_table_rows:nth-child(odd) {
   background-color: lightgray;
 }
+
+td {
+  border: 1px solid #e2e5e9;
+  border-collapse: collapse;
+}
+
+.nameData {
+  font-weight: bold;
+  font-size: 20px;
+  width: 15%;
+  padding: 0.5rem;
+}
+
+.notmember,
+.member {
+  width: 14%;
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.joinmission {
+  width: 12%;
+  text-align: center;
+}
+
+.onemission_description {
+  padding: 0.5rem;
+}
+
+.notmember > span,
+.member > span {
+  border-radius: 5px;
+  padding-inline: 0.4rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.notmember > span {
+  background-color: #6c757e;
+}
+
+.member > span {
+  background-color: #1aa1b9;
+}
+
+.joinbtn,
+.leavebtn {
+  background: transparent;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+.joinbtn {
+  border: 1px solid #4b5156;
+}
+
+.leavebtn {
+  border: 1px solid #e1525d;
+  color: #e1525d;
+}

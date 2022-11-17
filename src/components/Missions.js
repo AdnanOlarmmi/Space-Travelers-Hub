@@ -1,28 +1,35 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import Mission from './Mission';
 import { fetchMissions } from '../redux/missions/missionSlice';
+import styles from '../App.module.css';
 
 const Missions = () => {
+  const { missions } = useSelector((state) => ({...state.missionReducer}));
   const dispatch = useDispatch();
 
-  useEffect(() => { 
+  useEffect(() => {
     dispatch(fetchMissions());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const missions = useSelector((state) => state.missionReducer.missions);
-
   return (
-    <main className="rocket__container flex-column">
-      {missions.map((mission) => (
-        <Missions
-          key={mission.id}
-          description={mission.description}
-          name={mission.name}
-          status={mission.status}
-        />
-      ))}
-    </main>
+    <table className={styles.mission_table_wrapper}>
+      <thead>
+        <tr className={styles.mission_table_row}>
+          <th className={styles.mission_table_head}>Mission</th>
+          <th className={styles.mission_table_head}>Description</th>
+          <th className={styles.mission_table_head}>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {missions.map((item) => (
+          <tr className={styles.mission_table_rows} key={item.id}>
+            <Mission name={item.name} description={item.description} />
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
-
 export default Missions;

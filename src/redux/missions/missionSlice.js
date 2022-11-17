@@ -30,7 +30,7 @@ const missionSlice = createSlice({
     builder.addCase(fetchMissions.fulfilled, (state, action) => {
       state.status = 'succeeded';
       const missionsArr = [];
-      action.payload.map((rocket) => missionsArr.push({
+      action.payload.map((mission) => missionsArr.push({
         id: mission.mission_id,
         name: mission.mission_name,
         description: mission.description,

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../App.module.css'
+import styles from '../App.module.css';
 
 const Mission = (props) => {
   const { name, description } = props;
@@ -13,7 +13,7 @@ const Mission = (props) => {
       <td className={styles.joinmission}><button type="button">Join Mission</button></td>
     </>
   );
-}
+};
 
 Mission.propTypes = {
   name: PropTypes.string.isRequired,

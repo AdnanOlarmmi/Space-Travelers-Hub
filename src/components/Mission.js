@@ -1,11 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { reserveMission } from '../redux/missions/missionSlice'
+import { reserveMission } from '../redux/missions/missionSlice';
 import styles from '../App.module.css';
 
 const Mission = (props) => {
-  const { name, description, id, status } = props;
+  const {
+    name, description, id, status,
+  } = props;
 
   const dispatch = useDispatch();
 
@@ -14,12 +16,12 @@ const Mission = (props) => {
       <td className={styles.nameData}>{ name }</td>
       <td className={styles.onemission_description}>{ description }</td>
       <td className={styles.notmember}>
-        {(status && (<span >Member</span>))}
-        {(!status && (<span >Not A Member</span>))}
-        </td>
-      <td className={styles.joinmission}>
-        {(!status && (<button onClick={() => dispatch(reserveMission(id))} type="button">Join Mission</button>))}
-        {(status && (<button onClick={() => dispatch(reserveMission(id))} type="button">Cancel Mission</button>))}
+        {(status && (<span className={styles.active}>Active Member</span>))}
+        {(!status && (<span>NOT A MEMBER</span>))}
+      </td>
+      <td>
+        {(!status && (<button className={styles.joinmission} onClick={() => dispatch(reserveMission(id))} type="button">Join Mission</button>))}
+        {(status && (<button className={styles.leavemission} onClick={() => dispatch(reserveMission(id))} type="button">Leave Mission</button>))}
       </td>
     </>
   );

@@ -49,10 +49,10 @@ td {
   padding: 0.4rem;
 }
 
-.joinmission {
+/* .joinmission {
   width: 12%;
   text-align: center;
-}
+} */
 
 .onemission_description {
   padding: 0.5rem;
@@ -67,11 +67,18 @@ td {
 }
 
 .notmember > span {
+  display: block;
   background-color: #6c757e;
+  width: 120px;
+  font-size: 0.8rem;
 }
 
 .member > span {
   background-color: #1aa1b9;
+}
+
+.active {
+  background-color: #1aa1b9 !important;
 }
 
 .joinbtn,
@@ -81,11 +88,20 @@ td {
   border-radius: 6px;
 }
 
-.joinbtn {
+.joinmission {
   border: 1px solid #4b5156;
+  padding: 2px 4px;
+  border-radius: 4px;
+  width: 100px;
+  cursor: pointer;
 }
 
-.leavebtn {
+.leavemission {
   border: 1px solid #e1525d;
   color: #e1525d;
+  background-color: inherit;
+  padding: 2px 4px;
+  border-radius: 4px;
+  width: 100px;
+  cursor: pointer;
 }

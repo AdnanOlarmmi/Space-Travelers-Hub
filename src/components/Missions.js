@@ -25,7 +25,12 @@ const Missions = () => {
       <tbody>
         {missions.map((item) => (
           <tr className={styles.mission_table_rows} key={item.id}>
-            <Mission name={item.name} description={item.description} />
+            <Mission
+              name={item.name}
+              description={item.description}
+              id={item.id}
+              status={item.status}
+            />
           </tr>
         ))}
       </tbody>

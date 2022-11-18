@@ -7,7 +7,7 @@ const Header = () => {
     const currentRoute = e.target.className;
     const parentNode = e.target.parentNode.parentNode.childNodes;
     for (let i = 0; i < parentNode.length; i +=1) {
-      if (parentNode[i].childNodes[0].className === currentRoute) {
+      if (parentNode[i].childNodes[0].className === currentRoute && e.target.nodeName === 'A') {
         parentNode[i].childNodes[0].classList.add('currentRoute');
       } else {
         parentNode[i].childNodes[0].classList.remove('currentRoute');
@@ -26,7 +26,7 @@ const Header = () => {
       <nav>
         <ul onClick={onClick} className="nav flex-row">
           <li>
-            <Link to="/ " className="nav__rockets">Rockets</Link>
+            <Link to="/ " className="nav__rockets currentRoute">Rockets</Link>
           </li>
           <li>
             <Link to="/missions" className="nav__missions" id="rocket-nav">Missions</Link>
@@ -41,3 +41,4 @@ const Header = () => {
 };
 
 export default Header;
+

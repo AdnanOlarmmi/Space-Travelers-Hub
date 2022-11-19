@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check if button works 1`] = `[Function]`;
+
+exports[`Rockets Check if button works 1`] = `[Function]`;
+
+exports[`Rockets render My Rockets Components 1`] = `[Function]`;

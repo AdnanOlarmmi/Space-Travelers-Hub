@@ -18,11 +18,11 @@ const Rocket = (props) => {
       <img src={image} alt={name} className="rocket__img" />
       <div className="rocket__info flex-column">
         <h4 className="rocket__heading">{name}</h4>
-        <p className="rocket__description">
+        <p data-testid= 'msn' className="rocket__description">
           {reserved && <span>Reserved</span>}
           {description}
         </p>
-        <button type="button" className={`rocket__reserve ${reserved && 'rocket__cancel'}`} onClick={onClick}>{reserved ? 'Cancel Reservation' : 'Reserve'}</button>
+        <button data-testid="btn" type="button" className={`rocket__reserve ${reserved && 'rocket__cancel'}`} onClick={onClick}>{reserved ? 'Cancel Reservation' : 'Reserve'}</button>
       </div>
     </section>
   );

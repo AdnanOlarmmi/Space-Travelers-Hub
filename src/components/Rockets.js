@@ -8,9 +8,9 @@ const Rockets = () => {
 
   const rockets = useSelector((state) => state.rocketReducer.rockets);
 
-  if(rockets.length===0) {
+  if (rockets.length === 0) {
     dispatch(fetchRockets());
-}
+  }
 
   return (
     <main className="rocket__container flex-column">

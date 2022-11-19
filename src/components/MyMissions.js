@@ -11,7 +11,7 @@ const MyMissions = () => {
         <th>My Missions</th>
       </thead>
       <tbody>
-          {filterMissions.map((mission) => <tr key={mission.id}>{mission.name}</tr>)}
+        {filterMissions.map((mission) => <tr key={mission.id}>{mission.name}</tr>)}
       </tbody>
     </table>
   );

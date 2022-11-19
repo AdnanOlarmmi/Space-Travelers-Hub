@@ -8,10 +8,9 @@ const Missions = () => {
   const { missions } = useSelector((state) => ({ ...state.missionReducer }));
   const dispatch = useDispatch();
 
-  if(missions.length === 0) { 
-    dispatch(fetchMissions()); 
-}
-
+  if (missions.length === 0) {
+    dispatch(fetchMissions());
+  }
 
   return (
     <table className={styles.mission_table_wrapper}>

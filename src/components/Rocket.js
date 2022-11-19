@@ -22,8 +22,10 @@ const Rocket = (props) => {
           {reserved && <span>Reserved</span>}
           {description}
         </p>
-        <button type="button" className={`rocket__reserve ${reserved && 'rocket__cancel'}`} onClick={onClick}>{reserved && <span>Cancel Reservation</span>}
-          {!reserved && <span>Reserve</span>}</button>
+        <button type="button" className={`rocket__reserve ${reserved && 'rocket__cancel'}`} onClick={onClick}>
+          {reserved && <span>Cancel Reservation</span>}
+          {!reserved && <span>Reserve</span>}
+        </button>
       </div>
     </section>
   );

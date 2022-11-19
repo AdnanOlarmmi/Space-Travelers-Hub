@@ -18,7 +18,7 @@ const Rocket = (props) => {
       <img src={image} alt={name} className="rocket__img" />
       <div className="rocket__info flex-column">
         <h4 className="rocket__heading">{name}</h4>
-        <p className="rocket__description">
+        <p data-testid="msn" className="rocket__description">
           {reserved && <span>Reserved</span>}
           {description}
         </p>

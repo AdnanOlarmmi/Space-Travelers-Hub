@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRockets } from '../redux/rockets/rocketSlice';
 import Rocket from './Rocket';
@@ -8,10 +8,9 @@ const Rockets = () => {
 
   const rockets = useSelector((state) => state.rocketReducer.rockets);
 
-  window.onload = () => {
+  if (rockets.length === 0) {
     dispatch(fetchRockets());
   }
- 
 
   return (
     <main className="rocket__container flex-column">

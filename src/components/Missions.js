@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Mission from './Mission';
 import { fetchMissions } from '../redux/missions/missionSlice';
@@ -8,10 +8,9 @@ const Missions = () => {
   const { missions } = useSelector((state) => ({ ...state.missionReducer }));
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  if (missions.length === 0) {
     dispatch(fetchMissions());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }
 
   return (
     <table className={styles.mission_table_wrapper}>

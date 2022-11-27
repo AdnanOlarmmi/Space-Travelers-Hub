@@ -26,7 +26,7 @@ A corporation that offers services for commercial and scientific space flight ha
 
 ## Live Preview
 
-[Access](astonishing-buttercream-c8763e.netlify.app) it here.
+[Access](https://adnanquinspacetravelers.netlify.app/) it here.
 
 ## Getting Started
 
